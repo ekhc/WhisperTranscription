@@ -44,8 +44,8 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/CyR1en/whisper-transcriber.git
-cd whisper-transcriber
+git clone https://github.com/ekhc/WhisperTranscription.git
+cd WhisperTranscription
 ```
 
 2. Set up Poetry environment with Python 3.11:
@@ -71,7 +71,7 @@ poetry install
 
 1. Activate the Poetry environment and run the application:
 ```bash
-poetry run python ui.py
+poetry run whisper-transcription
 ```
 
 ## Usage
