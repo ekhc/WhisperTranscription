@@ -1,0 +1,5 @@
+__pycache__/
+env/
+fonts/
+output/
+.DS_Store

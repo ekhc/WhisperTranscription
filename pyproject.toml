@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "whisper-transcription"
+version = "0.1.0"
+description = "Speech-to-text application using Whisper and speaker diarization"
+authors = ["Eugene Cha <eugenekhcha@gmail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"  # Specifically use Python 3.11 because of openai-whisper
+pyside6 = "^6.5.2"
+transformers = "*"
+pyaudio = "*"
+pyqtdarktheme = "*"
+librosa = "*"
+soundfile = "*"
+matplotlib = "*"
+openai-whisper = {git = "https://github.com/openai/whisper.git"}
+pyannote-audio = "*"
+torch = "*"
+torchaudio = "*"
+numpy = "*"
+rich = "*"
+requests = "*"
+sounddevice = "*"
+scipy = "*"
+pydub = "*"
+
+[tool.poetry.scripts]
+whisper-transcription = "src.main:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
