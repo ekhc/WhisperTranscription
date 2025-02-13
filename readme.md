@@ -1,4 +1,4 @@
-# Whisper Transcriber
+# Whisper Transcription
 
 A desktop application for transcribing audio with speaker diarization using OpenAI's Whisper and Pyannote.audio and optionally Pyannote AI
 
