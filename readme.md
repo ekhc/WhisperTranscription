@@ -2,6 +2,10 @@
 
 A desktop application for transcribing audio with speaker diarization using OpenAI's Whisper and Pyannote.audio and optionally Pyannote AI
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c61a53d5-c258-496e-a81d-231cbdddb999" alt="Image">
+</div>
+
 ## Features
 - Record audio or upload audio files
 - Transcribe audio using OpenAI's Whisper with multiple model options:
