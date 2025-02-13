@@ -56,16 +56,55 @@ poetry install
 
 ## Configuration
 
-### Hugging Face Token (Required for Speaker Diarization)
+### Hugging Face Token Setup (Required for Speaker Diarization)
 
-1. Create an account at [Hugging Face](https://huggingface.co)
-2. Get your token at [https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)
-3. Set it as an environment variable (recommended):
-   ```bash
-   # Add to ~/.zshrc or ~/.bashrc for persistence
-   export HUGGING_FACE_TOKEN=your_token_here
-   ```
-   Or enter it in the application UI when prompted
+The speaker diarization feature uses Pyannote.audio, which requires accepting license terms and obtaining access tokens. Follow these steps:
+
+1. Create a Hugging Face account at [Hugging Face](https://huggingface.co)
+
+2. Accept the user agreement for the model:
+   - Visit [pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1)
+   - Click "Accept" on the license terms for the model
+
+3. Create an access token:
+   - Go to [Hugging Face Access Tokens](https://huggingface.co/settings/tokens)
+   - Click "New token" and give it a name (e.g., "WhisperTranscription")
+   - Copy the generated token
+
+4. Set up your token:
+   - Option 1: Set as environment variable (recommended):
+     ```bash
+     # Add to ~/.zshrc or ~/.bashrc for persistence
+     export HUGGING_FACE_TOKEN=your_token_here
+     ```
+   - Option 2: Enter it in the application UI when prompted
+
+### Pyannote API Token Setup (Optional - for API-based Diarization)
+
+If you want to use the Pyannote.ai API service instead of local processing:
+
+1. Sign up for an API account at [Pyannote.ai](https://pyannote.ai)
+2. Get your API token from your account dashboard
+3. Set up your token:
+   - Option 1: Set as environment variable (recommended):
+     ```bash
+     # Add to ~/.zshrc or ~/.bashrc for persistence
+     export PYANNOTE_TOKEN=your_api_token_here
+     ```
+   - Option 2: Enter it in the application UI when prompted
+
+Note: The Pyannote.ai API is a paid service that offers:
+- Higher performance than local processing
+- No need to manage local GPU resources
+- Automatic scaling and updates
+Choose between local processing (Hugging Face token) or API service (Pyannote API token) based on your needs.
+
+Note: While Pyannote.audio is open-source under the MIT license, you must agree to their terms of use which include:
+- Sharing contact information for userbase analytics
+- Receiving occasional emails about premium features
+- Using the models in compliance with their intended purpose
+
+For commercial or high-volume usage, consider their [premium services](https://www.pyannote.ai).
 
 ## Running the Application
 
