@@ -8,23 +8,20 @@ packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = ">=3.11,<3.12"  # Specifically use Python 3.11 because of openai-whisper
-pyside6 = "^6.5.2"
-transformers = "*"
-pyaudio = "*"
-pyqtdarktheme = "*"
-librosa = "*"
-soundfile = "*"
-matplotlib = "*"
-openai-whisper = {git = "https://github.com/openai/whisper.git"}
-pyannote-audio = "*"
-torch = "*"
-torchaudio = "*"
-numpy = "*"
-rich = "*"
-requests = "*"
-sounddevice = "*"
-scipy = "*"
-pydub = "*"
+pyside6 = "^6.8.2"
+transformers = "^4.48.3"
+pyaudio = "^0.2.14"
+librosa = "^0.10.2"
+soundfile = "^0.13.1"
+matplotlib = "^3.10.0"
+pyannote-audio = "^3.3.2"
+torch = "^2.6.0"
+torchaudio = "^2.6.0"
+numpy = "^2.1.3"
+requests = "^2.32.3"
+scipy = "^1.15.1"
+pydub = "^0.25.1"
+openai-whisper = "^20240930"
 
 [tool.poetry.scripts]
 whisper-transcription = "src.main:main"
