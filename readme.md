@@ -1,6 +1,6 @@
 # Whisper Transcriber
 
-A desktop application for transcribing audio with speaker diarization using OpenAI's Whisper and Pyannote.audio.
+A desktop application for transcribing audio with speaker diarization using OpenAI's Whisper and Pyannote.audio and optionally Pyannote AI
 
 ## Features
 - Record audio or upload audio files
