@@ -171,9 +171,10 @@ class WhisperTranscriptionApp(QtWidgets.QMainWindow):
         self.record_button.clicked.connect(self.on_record_button)
         self.upload_button = QtWidgets.QPushButton("Upload Audio")
         self.upload_button.clicked.connect(self.on_upload_button)
-        self.stop_button = QtWidgets.QPushButton("Stop Transcription")
+        self.stop_button = QtWidgets.QPushButton("Cancel Transcription")
         self.stop_button.clicked.connect(self.stop_transcription)
         self.stop_button.setEnabled(False)
+        self.stop_button.setToolTip("Cancel transcription process.\nNote: Cannot interrupt active transcription,\nbut can prevent subsequent steps.")
         button_layout = QtWidgets.QHBoxLayout()
         button_layout.addWidget(self.record_button)
         button_layout.addWidget(self.upload_button)
@@ -343,6 +344,14 @@ class WhisperTranscriptionApp(QtWidgets.QMainWindow):
             self.status_label.show()
             self.progress_bar.setValue(int(progress))
             self.status_label.setText(status)
+            
+            # Disable cancel button during actual transcription
+            if status.lower().startswith("transcribing"):
+                self.stop_button.setEnabled(False)
+                self.stop_button.setToolTip("Cannot cancel during active transcription")
+            else:
+                self.stop_button.setEnabled(True)
+                self.stop_button.setToolTip("Cancel transcription process.\nNote: Cannot interrupt active transcription,\nbut can prevent subsequent steps.")
         except Exception as e:
             print("[DEBUG] Exception in _apply_progress:", e)
 
