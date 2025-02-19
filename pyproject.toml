@@ -22,6 +22,8 @@ requests = "^2.32.3"
 scipy = "^1.15.1"
 pydub = "^0.25.1"
 openai-whisper = "^20240930"
+pyinstaller = "^6.12.0"
+dmgbuild = "^1.6.4"
 
 [tool.poetry.scripts]
 whisper-transcription = "src.main:main"

@@ -3,3 +3,5 @@ env/
 fonts/
 output/
 .DS_Store
+build/
+dist/
